@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Cestas Básicas do IFTM</title>
+</head>
+<body>
+	<h1>Entregas</h1>
+	<p th:text="'Mês: ' + ${mes}"></p>
+	<p th:text="'Ano: ' + ${ano}"></p>
+	<hr>
+	
+	<div th:each="e : ${entregas}">
+		<p th:text="'Família do aluno: ' + ${e.familia.nomeAluno}"></p>
+		<p th:text="'Endereço da Família: ' + ${e.familia.endereco}"></p>
+		<p th:text="'Contato da Família: ' + ${e.familia.contato}"></p>
+		<p th:text="'Família do aluno: ' + ${e.instituicao.nome}"></p>
+		<p th:text="'Endereço da Instituição: ' + ${e.instituicao.endereco}"></p>
+		<p th:text="'Contato da Instituição: ' + ${e.instituicao.contato}"></p>
+	<hr>
+	</div>
+	
+	<a th:href="@{/}">Voltar</a>
+	
+</body>
+</html>

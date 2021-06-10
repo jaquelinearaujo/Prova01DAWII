@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+<title>Cestas Básicas do IFTM</title>
+</head>
+<body>
+	<h1>Escolher a Instituição</h1>
+
+	<form method="post" th:action="@{/entrega/escolherfamilia}">
+		<p th:text="'Mês: ' + ${mes}"></p>
+		<input type="hidden" name="mes" th:value="${mes}">
+		<p th:text="'Ano: ' + ${ano}"></p>
+		<input type="hidden" name="ano" th:value="${ano}">
+		<label for="instituicao">Instituição:</label>
+		<select name="codigo" id="instituicao">
+			<option th:each="i : ${instituicoes}" th:value="${i.codigo}" th:text="${i.nome}"></option>
+		</select><br><br>
+		<input type="submit" value="Escolher Família">
+	</form>
+
+</body>
+</html>

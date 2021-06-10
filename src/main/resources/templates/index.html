@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Cestas Básicas do IFTM</title>
+</head>
+<body>
+	<h1>Entrega de Cestas Básicas do IFTM</h1>
+	
+	<form method="post" th:action="@{/entrega/escolherinstituicao}">
+		<label for="mes">Mês:</label>
+		<input type="number" name="mes" id="mes"><br><br>
+		<label for="ano">Ano:</label>
+		<input type="number" name="ano" id="ano"><br><br>
+		<input type="submit" value="Cadastrar Entrega">
+	</form>
+	<hr>
+	<form method="post" th:action="@{/entrega/relatorio}">
+		<label for="mes">Mês:</label>
+		<input type="number" name="mes" id="mes"><br><br>
+		<label for="ano">Ano:</label>
+		<input type="number" name="ano" id="ano"><br><br>
+		<input type="submit" value="Relatório de Entregas">
+	</form>
+	<hr>
+	<form method="post" th:action="@{/familia/relatorio}">
+		<label for="mes">Mês:</label>
+		<input type="number" name="mes" id="mes"><br><br>
+		<label for="ano">Ano:</label>
+		<input type="number" name="ano" id="ano"><br><br>
+		<input type="submit" value="Relatório de Famílias Não Contempladas">
+	</form>
+	
+</body>
+</html>
